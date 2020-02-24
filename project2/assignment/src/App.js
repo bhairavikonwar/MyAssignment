@@ -3,6 +3,8 @@ import './App.css';
 //import './fontawesome.css';
 //import Search from 'react-search';
 import DataTable from 'react-data-table-component';
+import { CSVLink, CSVDownload } from "react-csv";
+
 //import ReactSearchBox from 'react-search-box';
 
 
@@ -187,6 +189,10 @@ class App extends React.Component {
                                   <label>
                                       <input type="search" value={this.state.inputSearchValue} placeholder="Search by name or IBMid" className="form-control input-sm" name="customFilter" onChange={this.handleFilter} />
                                       <button onClick={this.searchString}><i className="fa fa-search"></i></button>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;
+                                      <CSVLink data={this.state.tableData}>
+                                      <i className="fa fa-download"></i>
+                                      Export User File</CSVLink>;
                                   </label>
 
                               </div>
